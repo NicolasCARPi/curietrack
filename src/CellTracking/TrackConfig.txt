@@ -1,0 +1,26 @@
+//Data
+double scalefactor = 1.29;
+double TimeInterval = 5;
+//Segmentation
+double SubBackFactor = 3.0;
+int nclose = 1;
+int nopen = 1;
+double threshold_Mask = 3;
+double threshold_Visual = 0.05;
+int GeomFilterLineSizeX = 2;
+int GeomFilterLineSizeY = 1;
+int GeomFilterChanSizeX = 2;
+int GeomFilterChanSizeY = 1;
+int GeomFilter2DSizeX = 3;
+int GeomFilter2DSizeY = 3;
+//Tracking
+double maxdisplacement = 150;
+double dYdX = 1;
+double dYdX_Line = 12;
+int disapearancetime = 3;
+double costBirthDeath = 1;
+int temperaturedecrease = 5;
+double normalizedIntensityWeight = 0.1;
+//Output
+int VisualOutput = 0;
+int ObjSize = 21;

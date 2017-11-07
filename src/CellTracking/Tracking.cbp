@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Tracking" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Main/;" />
+		<Build>
+			<Target title="Debug">
+				<Option platforms="Unix;" />
+				<Option output="bin/Debug/Tracking" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="/media/pmaiuri/DATA0/Giorgio/GS_SingleCellsTrans/Pos21_ctrl_ToTrack.tif 0 0 2D Ctrl /media/pmaiuri/DATA0/Giorgio/GS_SingleCellsTrans/TrackConfig.txt" />
+				<Compiler>
+					<Add option="-march=nocona" />
+					<Add option="-O1" />
+					<Add option="-O" />
+					<Add option="-pg" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-pg" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option platforms="Unix;" />
+				<Option output="bin/Release/Tracking" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=corei7" />
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-Os" />
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-fPIC" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-fexceptions" />
+			<Add option="-fopenmp" />
+			<Add directory="../TrackingLib_Perrine_2.1" />
+			<Add directory="../CellTracking" />
+			<Add directory="../Read_Write_Filter_Paolo" />
+		</Compiler>
+		<Linker>
+			<Add library="/usr/local/lib/libopencv_core.so" />
+			<Add library="/usr/local/lib/libopencv_highgui.so" />
+			<Add library="/usr/local/lib/libopencv_imgproc.so" />
+			<Add library="/usr/lib/libopencv_imgcodecs.so" />
+			<Add library="/usr/lib/libopencv_videoio.so" />
+			<Add library="/usr/local/lib/libopencv_video.so" />
+			<Add library="/usr/lib/libgsl.so" />
+			<Add library="/usr/lib/libgslcblas.so" />
+			<Add library="/usr/lib/libgomp.so" />
+			<Add library="/usr/lib/libtiff.so" />
+		</Linker>
+		<Unit filename="../Read_Write_Filter_Paolo/FileListAlphaNumeric.h" />
+		<Unit filename="../Read_Write_Filter_Paolo/PaFiltering.h" />
+		<Unit filename="../Read_Write_Filter_Paolo/PaSaveTiff.h" />
+		<Unit filename="../Read_Write_Filter_Paolo/PaSaveTiff_Avi.h" />
+		<Unit filename="../Read_Write_Filter_Paolo/ParallelSave.h" />
+		<Unit filename="../Read_Write_Filter_Paolo/ReadTiffPa.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/closerNeighbors/tab_times_closer_neighbors.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/closerNeighbors/tab_times_closer_neighbors.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/closerNeighbors/time_nodes_closer_neighbors.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/closerNeighbors/time_nodes_closer_neighbors.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/generalParam/NoError.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/generalParam/generalParam.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/TrackingLib.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/TrackingLib.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/chain_neighbor.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/chain_neighbor.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/general.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/info_2D.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/info_2D.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/info_node.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/info_node.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/nodes.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/nodes.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/tab_times.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/tab_times.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/time_nodes.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/kernel/time_nodes.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/likenessdistInten/nodes_dist_inten.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/likenessdistInten/nodes_dist_inten.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/likenessdistInten/tab_times_dist_inten.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/likenessdistInten/tab_times_dist_inten.h" />
+		<Unit filename="../TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.cpp" />
+		<Unit filename="../TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.h" />
+		<Unit filename="SegTrack_9.1.cpp">
+			<Option virtualFolder="Main/" />
+		</Unit>
+		<Unit filename="TrackingFunctions.h">
+			<Option virtualFolder="Main/" />
+		</Unit>
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
