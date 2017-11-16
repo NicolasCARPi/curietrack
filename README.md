@@ -6,6 +6,12 @@ Code used in the World's First Cell Race: https://www.ncbi.nlm.nih.gov/pubmed/22
 
 # Usage
 
+~~~bash
+
+docker run nicolascarpi/curietrack
+
+~~~
+
 # Documentation
 
 # Examples
