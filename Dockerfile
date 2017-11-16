@@ -16,8 +16,11 @@ RUN apt-get update && \
     libopencv-calib3d-dev \
     libopencv-ml-dev \
     libopencv-contrib-dev \
+    git \
     unzip
-VOLUME /app
-#COPY tracking.zip /tracking.zip
-#RUN unzip /tracking.zip
-#RUN cd /tracking-paolo-new/CellTracking && make
+
+RUN git clone https://github.com/NicolasCARPi/curietrack /app
+
+RUN cd /app/src/CellTracking && make
+
+CMD ["/app/src/CellTracking/bin/Release/Tracking"]

@@ -41,9 +41,9 @@ OBJDIR_RELEASE = obj/Release
 DEP_RELEASE = 
 OUT_RELEASE = bin/Release/Tracking
 
-OBJ_DEBUG = $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/info_2D.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/info_node.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/nodes.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/tab_times.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/time_nodes.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/likenessdistInten/nodes_dist_inten.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/likenessdistInten/tab_times_dist_inten.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.o $(OBJDIR_DEBUG)/SegTrack_9.1.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/closerNeighbors/tab_times_closer_neighbors.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/closerNeighbors/time_nodes_closer_neighbors.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/TrackingLib.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/chain_neighbor.o
+OBJ_DEBUG = $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/info_2D.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/info_node.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/nodes.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/tab_times.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/time_nodes.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/likenessdistInten/nodes_dist_inten.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/likenessdistInten/tab_times_dist_inten.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.o $(OBJDIR_DEBUG)/SegTrack.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/closerNeighbors/tab_times_closer_neighbors.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/closerNeighbors/time_nodes_closer_neighbors.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/TrackingLib.o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/kernel/chain_neighbor.o
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/info_2D.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/info_node.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/nodes.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/tab_times.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/time_nodes.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/likenessdistInten/nodes_dist_inten.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/likenessdistInten/tab_times_dist_inten.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.o $(OBJDIR_RELEASE)/SegTrack_9.1.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/closerNeighbors/tab_times_closer_neighbors.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/closerNeighbors/time_nodes_closer_neighbors.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/TrackingLib.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/chain_neighbor.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/info_2D.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/info_node.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/nodes.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/tab_times.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/time_nodes.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/likenessdistInten/nodes_dist_inten.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/likenessdistInten/tab_times_dist_inten.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.o $(OBJDIR_RELEASE)/SegTrack.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/closerNeighbors/tab_times_closer_neighbors.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/closerNeighbors/time_nodes_closer_neighbors.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/TrackingLib.o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/kernel/chain_neighbor.o
 
 all: debug release
 
@@ -87,8 +87,8 @@ $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/likenessdistInten/tab_times_dist_inte
 $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.o: ../TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c ../TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.cpp -o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.o
 
-$(OBJDIR_DEBUG)/SegTrack_9.1.o: SegTrack_9.1.cpp
-	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c SegTrack_9.1.cpp -o $(OBJDIR_DEBUG)/SegTrack_9.1.o
+$(OBJDIR_DEBUG)/SegTrack.o: SegTrack.cpp
+	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c SegTrack.cpp -o $(OBJDIR_DEBUG)/SegTrack.o
 
 $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.o: ../TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c ../TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.cpp -o $(OBJDIR_DEBUG)/__/TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.o
@@ -151,8 +151,8 @@ $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/likenessdistInten/tab_times_dist_in
 $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.o: ../TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c ../TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.cpp -o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/likenessdistInten/time_nodes_dist_inten.o
 
-$(OBJDIR_RELEASE)/SegTrack_9.1.o: SegTrack_9.1.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c SegTrack_9.1.cpp -o $(OBJDIR_RELEASE)/SegTrack_9.1.o
+$(OBJDIR_RELEASE)/SegTrack.o: SegTrack.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c SegTrack.cpp -o $(OBJDIR_RELEASE)/SegTrack.o
 
 $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.o: ../TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c ../TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.cpp -o $(OBJDIR_RELEASE)/__/TrackingLib_Perrine_2.1/closerNeighbors/nodes_closer_neighbors.o
