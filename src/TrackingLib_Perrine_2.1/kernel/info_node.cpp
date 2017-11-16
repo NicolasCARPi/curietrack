@@ -1,16 +1,14 @@
 /*******************************************************************************************************************
-									InfoNode Class
-								  InfoNode contains the information for a given Node in 2D or in 3D
-									Institut Curie
-									UMR - 144
-									by Victor Racine
-									2004/06/24
-									modified by Perrine 2011
+    InfoNode Class
+    InfoNode contains the information for a given Node in 2D or in 3D
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    2004/06/24
+    modified by Perrine 2011
 *******************************************************************************************************************/
 
-
 #include "info_node.h"
-//using namespace std;
 
 extern PublicParameters *publicParameters;
 
@@ -41,7 +39,6 @@ float InfoNode2D::distancedxdy(InfoNode* i1, InfoNode*i2){
 	return(res);
 }
 
-
 float InfoNode2D::distance(InfoNode*infoNode){
 	float res;
 	double dX=getX()-infoNode->getX();
@@ -64,21 +61,6 @@ float InfoNode2D::distance(InfoNode* i1, InfoNode*i2){
 		res+=0;
 	return(res);
 }
-/** old version from Victor
-float InfoNode2D::distance(InfoNode* i1, InfoNode*i2){
-	float res;
-	double n1n2X=(i1->getX()*i1->getIntensity()+i2->getX()*i2->getIntensity())/(i1->getIntensity()+i2->getIntensity());
-	double n1n2Y=(i1->getY()*i1->getIntensity()+i2->getY()*i2->getIntensity())/(i1->getIntensity()+i2->getIntensity());
-	double dX=getX()-n1n2X;
-	double dY=(getY()-n1n2Y)*publicParameters->dydX;
-	res=(float)sqrt(dX*dX+dY*dY);
-	if(res<0.)
-		return(0.);
-	if(res<1e-9)
-		res+=0;
-	return(res);
-}
-*/
 double InfoNode2D::getMean(){
 	return(info.mean);
 }
@@ -104,8 +86,6 @@ double InfoNode2D::getY(){
 	return(info.moment.y);
 }
 
-
-
 unsigned long InfoNode2D::sizeofInfoData(){
 	return(sizeof(InfoData2D));
 }
@@ -129,8 +109,5 @@ void InfoNode2D::convertinfoAsciiinfo(int i1,int i2,float i3,float i4, float i5,
 	info.index=i2;
 	info.time=i1;
 
-	//printf("%u %u %f:\n", info.time, info.index,info.mean);
-
 	return;
 }
-

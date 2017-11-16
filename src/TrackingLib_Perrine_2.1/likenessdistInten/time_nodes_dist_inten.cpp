@@ -1,17 +1,15 @@
 /*******************************************************************************************************************
-									TimeNodesDistanceIntensity Class
-									It is derived from the class TimeNodes
-								This class find the neighbor with the best likeness.
-								Likeness depend on the distance and the intensity.
-								Institut Curie
-									UMR - 144
-									by Victor Racine
-									2004 06 24
+    TimeNodesDistanceIntensity Class
+    It is derived from the class TimeNodes
+    This class find the neighbor with the best likeness.
+    Likeness depend on the distance and the intensity.
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    2004 06 24
 *******************************************************************************************************************/
 
 #include "time_nodes_dist_inten.h"
-
-
 
 /********************************************************************************************************************
 allocNode(void) allocation of one node in the class TimeNodesDistanceIntensity
@@ -29,7 +27,6 @@ TimeNodesDistanceIntensity::TimeNodesDistanceIntensity(int _time, int _nbNodes):
 	}
 }
 
-
 /********************************************************************************************************************
 void computeConstantSigmas(double &stdIntensityComputing, double &stdMeanComputing, 
 	double &stdDistanceComputing, long &countStd) compute the constant kMean and kIntensity
@@ -43,7 +40,6 @@ void TimeNodesDistanceIntensity::computeConstantSigmas(double &stdIntensityCompu
 			stdDistanceComputing, countStdDist, sigmaClipping, hist);
 	}
 }
-
 
 /********************************************************************************************************************
 makeAllInitializationConnections() finds connections from the nodes of this time to the nodes of the time after according the selected model.

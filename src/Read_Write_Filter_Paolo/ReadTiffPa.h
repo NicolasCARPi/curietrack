@@ -212,4 +212,3 @@ void ImportTIFFdir(char* argv, int& ntot, int& imagewidth, int& imagelength, vec
     }
 
 }
-

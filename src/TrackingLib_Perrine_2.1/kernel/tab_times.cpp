@@ -1,18 +1,16 @@
 /*******************************************************************************************************************
-									TabTimes Class
-							Array containing all the TimeNodes for all instants
-									Institut Curie
-									UMR - 144
-									by Victor Racine
-									12 july 2002
-									modified in 2011 Perrine Gilloteaux
+    TabTimes Class
+    Array containing all the TimeNodes for all instants
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    12 july 2002
+    modified in 2011 Perrine Gilloteaux
 *******************************************************************************************************************/
 
 /********************************************************************************************************************
 ///Class TabTimes contains several TabTimes objets for each time (nbTimes).
 ********************************************************************************************************************/
-
-
 #include "tab_times.h"
 #include <stdio.h>
 using namespace std;
@@ -39,7 +37,6 @@ TabTimes::TabTimes(){
 }
 
 
-
 /********************************************************************************************************************
 Destructuor() of TabTimes class.
 Delete all objets TimeNodes.
@@ -50,13 +47,8 @@ TabTimes::~TabTimes(){
 	delete [] timeNodes;
 	if((publicParameters->verbose) || (publicParameters->nbNodeAllocated!=publicParameters->nbNodeDeallocated)
 			|| (publicParameters->nbChainNeighborAllocated!=publicParameters->nbChainNeighborDeallocated)){
-		////fprintf(outputStream,"node alloc:%d,\tdealloc:%d\n", publicParameters->nbNodeAllocated,
-		////	publicParameters->nbNodeDeallocated);
-		////fprintf(outputStream,"neighbors alloc:%d,\tdealloc:%d\n", publicParameters->nbChainNeighborAllocated,
-		////	publicParameters->nbChainNeighborDeallocated);
 	}
 }
-
 
 /********************************************************************************************************************
 allocTabTimes() alloc the timeNodes array of nbTimes long
@@ -87,186 +79,39 @@ int TabTimes::initialisation(double** objectstotrack, int allobjectsinframes,int
 }
 
 
-/********************************************************************************************************************
-printConnectionsASCII() print the result of the connections in a ASCII file
-Colonne 1         numero de la trace
-Colonne 2         numero de l’image, ou temps
-Colonne 3		   Former tag
-Colonne 4         X
-Colonne 5         Y
-Colonne 6         Intensity
-Colonne 7         Surface
-Colonne 8			Mother
-Colonne 9			 Daughter 1
-Colonne 10			Daughter 2
-+ print the result in division ascii:
-Frame_Mother Tag_ori_M Tag_new_M Frame_D1 Tag_ori_D1 Tag_New_D2 Tag_ori_D2
-********************************************************************************************************************/
-/*int TabTimes::printConnectionsASCII(){
-	FILE* stream;
-	printf("\n check the end: result file is :%25s \n",publicParameters->fileResASCII);
-	if( (stream=fopen(publicParameters->fileResASCII,"w"))==NULL){
-		printf("The file %ls can not be opened\n", publicParameters->fileResASCII );
-		return(T_ERR_OPENNING_FILE);
-	}
-	FILE* streamdivision;
-	if( (streamdivision=fopen(publicParameters->fileResASCIIdivision,"w"))==NULL){
-		printf("The file %ls can not be opened\n", publicParameters->fileResASCIIdivision );
-		return(T_ERR_OPENNING_FILE);
-	}
-
-	fprintf(stream,"StructureTag\tTime\tFormerTag\tX\tY\tIntensity\tArea\tMother Tag\tDaugther1 Tag\tDaughter2 tag \n");
-	fprintf(streamdivision,"Time\tMother Tag\t Mother Former Taf \t Daughter 1 tag\t Daughter formertag \t Daughter2 tag \t Daughter 2 formertag \n");
-	for(int t=0;t<nbTimes;t++){
-		TimeNodes* _localTimeNodes=timeNodes[t];
-		for(int n=0;n<_localTimeNodes->nbNodes;n++){
-			Node* node=_localTimeNodes->tabNodes[n];
-			if((node->connectionPast==NULL)&&(node->trackedStructureIndex>0)){
-				for(Node* nodeConnection=node;nodeConnection!=NULL;nodeConnection=nodeConnection->connectionFuture){
-					fprintf(stream, "%d\t", node->trackedStructureIndex);
-					fprintf(stream, "%d\t", nodeConnection->time);
-					fprintf(stream, "%d\t", nodeConnection->info->getIndex()); // former index for reference
-					fprintf(stream, "%f\t", nodeConnection->info->getY());
-					fprintf(stream, "%f\t", nodeConnection->info->getX());
-					fprintf(stream, "%f\t", nodeConnection->info->getIntensity());
-
-					fprintf(stream, "%d\t", nodeConnection->info->getSurface());
-					if  (nodeConnection->connectionFissionPast!=NULL)
-						fprintf(stream, "%d\t", nodeConnection->connectionFissionPast->trackedStructureIndex); // add the mother as well
-					else
-						fprintf(stream,"0\t");
-
-					if (nodeConnection->connectionFission1Future!=NULL) {//there is a fission division here Daughter 1 anbd Daughter 2
-
-								fprintf(stream,"%d\t",nodeConnection->connectionFission1Future->trackedStructureIndex);
-								fprintf(stream,"%d\n",nodeConnection->connectionFission2Future->trackedStructureIndex);
-								// Other file specific to division Frame_Mother Tag_ori_M Tag_new_M Frame_D1 Tag_ori_D1 Tag_New_D2 Tag_ori_D2
-								fprintf(streamdivision, "%d\t", nodeConnection->time);
-								fprintf(streamdivision, "%d\t", node->trackedStructureIndex);
-								fprintf(streamdivision, "%d\t", nodeConnection->info->getIndex()); // former index for reference
-								fprintf(streamdivision,"%d\t",nodeConnection->connectionFission1Future->trackedStructureIndex);
-								fprintf(streamdivision,"%d\t",nodeConnection->connectionFission1Future->info->getIndex());
-								fprintf(streamdivision,"%d\t",nodeConnection->connectionFission2Future->trackedStructureIndex);
-								fprintf(streamdivision,"%d\n",nodeConnection->connectionFission2Future->info->getIndex());
-
-						}
-						else{
-								fprintf(stream,"0\t");
-								fprintf(stream,"0\n");
-						}
-
-
-					}
-
-				}
-			}
-		}
-	fclose(stream);
-	fclose(streamdivision);
-	return(RET_OK);
-}
-*/
-
-/********************************************************************************************************************
-printConnectionsASCIIwithoutput() print the result of the connections in a ASCII file AND return the result in a vector
- In an 2D array vector of double[10]or 1D vector (to see)vector.h of vector from stdlib
-
- Structure For this: TrajectorytagColor|frame| FormerTag| TrajectoryTagMother(0 if no mother) |Numberofneighborsinthisframe
-
-Colonne 1         numero de la trace
-Colonne 2         numero de l’image, ou temps
-Colonne 3		   Former tag
-Colonne 4         X
-Colonne 5         Y
-Colonne 6         Intensity
-Colonne 7         Surface
-Colonne 8			Mother
-Colonne 9			 Daughter 1
-Colonne 10			Daughter 2
-+ print the result in division ascii:
-Frame_Mother Tag_ori_M Tag_new_M Frame_D1 Tag_ori_D1 Tag_New_D2 Tag_ori_D2
-********************************************************************************************************************/
 int TabTimes::printConnectionsASCIIwithoutput( std::vector<std::vector<double> > *outputVector){
 	//ccFILE* stream;
 
 	std::vector<double> structurecharacteristics;
 
-	//ccprintf("\n check the end: result file is :%25s \n",publicParameters->fileResASCII);
-	//ccif( (stream=fopen(publicParameters->fileResASCII,"w"))==NULL){
-	//cc	printf("The file %ls can not be opened\n", publicParameters->fileResASCII );
-	//cc	return(T_ERR_OPENNING_FILE);
-	//cc}
-	//ccFILE* streamdivision;
-	//ccif( (streamdivision=fopen(publicParameters->fileResASCIIdivision,"w"))==NULL){
-	//cc	printf("The file %ls can not be opened\n", publicParameters->fileResASCIIdivision );
-	//cc	return(T_ERR_OPENNING_FILE);
-	//cc}
-
-	//ccfprintf(stream,"StructureTag\tTime\tFormerTag\tX\tY\tIntensity\tArea\tMother Tag\tDaugther1 Tag\tDaughter2 tag \n");
-	//ccfprintf(streamdivision,"Time\tMother Tag\t Mother Former Taf \t Daughter 1 tag\t Daughter formertag \t Daughter2 tag \t Daughter 2 formertag \n");
 	for(int t=0;t<nbTimes;t++){
 		TimeNodes* _localTimeNodes=timeNodes[t];
 		for(int n=0;n<_localTimeNodes->nbNodes;n++){
 			Node* node=_localTimeNodes->tabNodes[n];
 			if((node->connectionPast==NULL)&&(node->trackedStructureIndex>0)){
 				for(Node* nodeConnection=node;nodeConnection!=NULL;nodeConnection=nodeConnection->connectionFuture){
-					//ccfprintf(stream, "%d\t", node->trackedStructureIndex);
 					structurecharacteristics.push_back(node->trackedStructureIndex); //color tag
-					//ccfprintf(stream, "%d\t", nodeConnection->time);
 					structurecharacteristics.push_back(nodeConnection->time); //frame
-					//ccfprintf(stream, "%d\t", nodeConnection->info->getIndex()); // former index for reference
 					structurecharacteristics.push_back(nodeConnection->info->getIndex());
-					//ccfprintf(stream, "%f\t", nodeConnection->info->getY());
-					//ccfprintf(stream, "%f\t", nodeConnection->info->getX());
-					//ccfprintf(stream, "%f\t", nodeConnection->info->getIntensity());
 
-					//ccfprintf(stream, "%d\t", nodeConnection->info->getSurface());
 					if  (nodeConnection->connectionFissionPast!=NULL){
-						//ccfprintf(stream, "%d\t", nodeConnection->connectionFissionPast->trackedStructureIndex); // add the mother as well
 					    structurecharacteristics.push_back( nodeConnection->connectionFissionPast->trackedStructureIndex);
 						}
 					else
 						{
-						//ccfprintf(stream,"0\t");
 						structurecharacteristics.push_back( 0);
 						}
 					structurecharacteristics.push_back(node->neighborsPresentCountCluster);
-					if (nodeConnection->connectionFission1Future!=NULL) {//there is a fission division here Daughter 1 anbd Daughter 2
-
-							//cc	fprintf(stream,"%d\t",nodeConnection->connectionFission1Future->trackedStructureIndex);
-								//ccfprintf(stream,"%d\n",nodeConnection->connectionFission2Future->trackedStructureIndex);
-								// Other file specific to division Frame_Mother Tag_ori_M Tag_new_M Frame_D1 Tag_ori_D1 Tag_New_D2 Tag_ori_D2
-								//ccfprintf(streamdivision, "%d\t", nodeConnection->time);
-								//ccfprintf(streamdivision, "%d\t", node->trackedStructureIndex);
-								//ccfprintf(streamdivision, "%d\t", nodeConnection->info->getIndex()); // former index for reference
-								//ccfprintf(streamdivision,"%d\t",nodeConnection->connectionFission1Future->trackedStructureIndex);
-								//ccfprintf(streamdivision,"%d\t",nodeConnection->connectionFission1Future->info->getIndex());
-								//ccfprintf(streamdivision,"%d\t",nodeConnection->connectionFission2Future->trackedStructureIndex);
-								//ccfprintf(streamdivision,"%d\n",nodeConnection->connectionFission2Future->info->getIndex());
-
-						}
-					else{
-								//ccfprintf(stream,"0\t");
-								//ccfprintf(stream,"0\n");
-						}
 
 			    outputVector->push_back(structurecharacteristics);
-				//printf("\n nb vector is:%d \n",outputVector->size());
-				//printf("\n nb vector char is:%d \n",structurecharacteristics.size());
 				structurecharacteristics.clear();
-				//printf("\n nb vector is after:%d \n",outputVector->size());
-				//printf("\n nb vector char is:%d \n",structurecharacteristics.size());
 					}
 
 				}
 			}
 		}
-	//ccfclose(stream);
-	//ccfclose(streamdivision);
 	return(RET_OK);
 }
-
-
 
 /********************************************************************************************************************
 readStatParameters() reads the file specified in publicParameters and allocates the corresponding TimeNodes
@@ -283,7 +128,6 @@ int TabTimes::readStatParameters(double** objectstotrack, int allobjectsinframes
     int node=0;
 
     nbTimes=nbframesinmovie;
-    ////printf( "\nNumber of frames: %i\n", nbTimes);
     allocTabTimes(); //Allocation of tabTimes
 
     long incre=0;
@@ -315,16 +159,6 @@ int TabTimes::readStatParameters(double** objectstotrack, int allobjectsinframes
 
         int test1,test2;
         float test3,test4,test7, test5,test6;
-        /**
-                    void InfoNode2D::convertinfoAsciiinfo(int i1,int i2,float i3,float i4, float i5,float i6,float i7){
-                    info.moment.x=i3;
-                    info.moment.y=i4;
-                    info.surf=i5;
-                    info.intensity=i7*i5;
-                    info.mean=i7;
-                    info.index=i2;
-                    info.time=i1;
-        */
         for (i=0;i<allobjectsinframes;i++){//for i#2
 
             if (objectstotrack[i][0]==time){//if objtotrack
@@ -440,8 +274,6 @@ int TabTimes::sortByIntensityAllNeighbors(){
 
 }
 
-
-
 /********************************************************************************************************************
 void setIndexToTrackedStructures() set a unique index to each tracked structures
 the fusion and fission split the strucutres.
@@ -452,7 +284,7 @@ void TabTimes::setIndexToTrackedStructures(){
 	Node* node;
 	Node* oldNode;
 	bool isNewIndex;
-	for(long time=0;time<nbTimes;time++)
+	for(long time=0;time<nbTimes;time++){
 		for(long indexNode=0;indexNode<timeNodes[time]->nbNodes;indexNode++){
 			if (timeNodes[time]->tabNodes[indexNode]->connectionBlinkFuture!=NULL) {
 				timeNodes[time]->tabNodes[indexNode]->connectionFuture=timeNodes[time]->tabNodes[indexNode]->connectionBlinkFuture;
@@ -489,27 +321,13 @@ void TabTimes::setIndexToTrackedStructures(){
 					timeNodes[time]->tabNodes[indexNode]->trackedStructureIndex=newIndex;
 					newIndex++;
 				}
-				}else{
-				//if (timeNodes[time]->tabNodes[indexNode]->connectionPast!=NULL){
+            }else{
 				timeNodes[time]->tabNodes[indexNode]->trackedStructureIndex=
-					timeNodes[time]->tabNodes[indexNode]->connectionPast->trackedStructureIndex;//}
-				//else{
-				//timeNodes[time]->tabNodes[indexNode]->trackedStructureIndex=
-				//	timeNodes[time]->tabNodes[indexNode]->connectionBlinkPast->trackedStructureIndex;}
-			}
+					timeNodes[time]->tabNodes[indexNode]->connectionPast->trackedStructureIndex;
+            }
 		}
-
-	//ccfprintf(outputStream, "%d tracked structures found with a minimum of %d times long\n\n", newIndex-1, publicParameters->nbMinSuccessiveStructures);
-	//ccfprintf(outputStream, "The standard variation of the intensity sum is %f\n", publicParameters->stdIntensity);
-	//ccfprintf(outputStream, "The standard variation of the intensity average is %f\n", publicParameters->stdMean);
-	//ccfprintf(outputStream, "The standard variation of the distance is %f\n", publicParameters->stdDistance);
-
-	}
-
-
-
-
-
+    }
+}
 
 /********************************************************************************************************************
 int giveResult() just call the function to display the result
@@ -519,10 +337,7 @@ int TabTimes::giveResult(std::vector<std::vector<double> > *output){
 
 	setIndexToTrackedStructures();
 
-	//if(publicParameters->fileResASCII[0]!=L'\0')
-	//ccif(publicParameters->fileResASCII != L'\0')
 	if((ret=printConnectionsASCIIwithoutput(output))<0) return(ret);
 
 	return(RET_OK);
 }
-

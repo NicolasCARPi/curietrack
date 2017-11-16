@@ -1,12 +1,11 @@
 /*******************************************************************************************************************
-									ChainNeighbor Class
-								This class allows to make a chained list to chain all the presnet neighbor nodes
-								Institut Curie
-									UMR - 144
-									by Victor Racine
-									2004 06 17
+    ChainNeighbor Class
+    This class allows to make a chained list to chain all the present neighbor nodes
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    2004 06 17
 *******************************************************************************************************************/
-
 
 #include "chain_neighbor.h"
 

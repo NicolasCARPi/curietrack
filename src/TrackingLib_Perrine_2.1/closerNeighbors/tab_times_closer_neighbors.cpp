@@ -1,13 +1,12 @@
 /*******************************************************************************************************************
-									TabTimesCloserNeighbors Class
-									It is derived from the class TabTimes
-								This class find the closer neighbors for each structure.
-								Institut Curie
-									UMR - 144
-									by Victor Racine
-									2004 06 21
+    TabTimesCloserNeighbors Class
+    It is derived from the class TabTimes
+    This class find the closer neighbors for each structure.
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    2004 06 21
 *******************************************************************************************************************/
-
 
 #include "tab_times_closer_neighbors.h"
 
@@ -25,10 +24,8 @@ TabTimesCloserNeighbors::~TabTimesCloserNeighbors(){
 
 }
 
-
-
 /********************************************************************************************************************
-allocTabTimes(int _nbTimes) alloc an array of _nbTimes long 
+allocTabTimes(int _nbTimes) alloc an array of _nbTimes long
 ********************************************************************************************************************/
 TimeNodes* TabTimesCloserNeighbors::allocTimeNodes(long _time, long _nbNodes){
 	return(new TimeNodesCloserNeighbors(_time,_nbNodes));

@@ -1,10 +1,10 @@
 /*******************************************************************************************************************
-									Node Class
-								  Node representing one structure
-									Institut Curie
-									UMR - 144
-									by Victor Racine
-									12 july 2002
+    Node Class
+    Node representing one structure
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    12 july 2002
 *******************************************************************************************************************/
 
 #ifndef __nodes__
@@ -21,8 +21,6 @@
 
 #define DIST_SIGNIFICANT	10.
 #define DIST_INFINITY		1.e10
-
-
 
 class Node{
 protected:
@@ -83,7 +81,5 @@ public:
 	double distanceToBorder(void);
 	double stericEffect(void);
 };
-
-
 
 #endif//	__nodes__

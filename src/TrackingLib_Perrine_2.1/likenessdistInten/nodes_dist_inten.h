@@ -1,12 +1,12 @@
 /*******************************************************************************************************************
-									NodeDistanceIntensity  Class
-									It is derived from the class Nodes
-								This class find the neighbor with the best likeness.
-								Likeness depend on the distance and the intensity.
-								Institut Curie
-									UMR - 144
-									by Victor Racine
-									2004 06 24
+    NodeDistanceIntensity  Class
+    It is derived from the class Nodes
+    This class find the neighbor with the best likeness.
+    Likeness depend on the distance and the intensity.
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    2004 06 24
 *******************************************************************************************************************/
 
 #ifndef __node_distance_intensity__
@@ -17,8 +17,6 @@
 
 
 #define STD_NOISE	40
-//#define K_INT		10
-//#define K_MEAN		10
 
 class NodeDistanceIntensity:public Node{
 private:
@@ -80,6 +78,5 @@ public:
 
 
 };
-
 
 #endif //__node_distance_intensity__

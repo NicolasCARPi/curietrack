@@ -6,10 +6,6 @@
 
 using namespace std;
 
-
-
-
-
 FILE *outputStream;
 
 PublicParameters *publicParameters;
@@ -41,7 +37,7 @@ int getOpt(int temperaturedecrease, double normalizedIntensityWeight, double max
 
 
     return(RET_OK);
-	// todo : add a watch event for blinking (missed segmenattion, fusion: there is a problem, and false division
+	// TODO : add a watch event for blinking (missed segmenattion, fusion: there is a problem, and false division
 }
 
 #define RETURN(param) {if(publicParameters->fileRes[0]!=L'\0'){fclose(outputStream);}return(param);}
@@ -54,14 +50,8 @@ int CRTracking::TrackingCellRace(int temperaturedecrease, double normalizedInten
 
 
 	if((ret=getOpt( temperaturedecrease, normalizedIntensityWeight, maxDistance, dydX, maxdisapear,  costBirthDeath, ratioCluster ))<0) return(ret);
-	//printf("error code: %d \n",ret);
 
 	outputStream=stdout;
-
-	//printf("\n result copy est :%25s \n",publicParameters->statFile);
-
-
-
 
 	tabTimes=new TabTimesDistanceIntensity();
 

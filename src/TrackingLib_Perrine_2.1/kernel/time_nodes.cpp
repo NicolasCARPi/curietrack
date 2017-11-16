@@ -1,10 +1,10 @@
 /*******************************************************************************************************************
-									TimeNodes Class
-							Array containing all the Node s of a particular instant
-									Institut Curie
-									UMR - 144
-									by Victor Racine
-									12 july 2002
+    TimeNodes Class
+    Array containing all the Node s of a particular instant
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    12 july 2002
 *******************************************************************************************************************/
 
 /********************************************************************************************************************

@@ -1,11 +1,11 @@
 /*******************************************************************************************************************
-									TabTimes Class
-							Array containing all the TimeNodes for all instants
-									Institut Curie
-									UMR - 144
-									by Victor Racine
-									12 july 2002
-									modified by Perrine August 2011
+    TabTimes Class
+    Array containing all the TimeNodes for all instants
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    12 july 2002
+    modified by Perrine August 2011
 *******************************************************************************************************************/
 
 
@@ -29,8 +29,6 @@
 			int linkNeighborsBlinkBeforeAndAfter();
 			int sortByIntensityAllNeighbors();
 			int	readStatParameters(double** objectstotrack, int allobjectsinframes, int nbframesinmovie, int sizeimageX, int sizeimageY);
-			//int printConnections();
-			//int printConnectionsASCII();
 			int printConnectionsASCIIwithoutput( std::vector<std::vector<double> > *outputVector);
 			void setIndexToTrackedStructures();
 			virtual TimeNodes* allocTimeNodes(long time, long nbNodes){return(NULL);};
@@ -48,9 +46,5 @@
 			virtual int runModel(){return(T_ERR_OOP);};
 
 		};
-
-
-
-
 
 #endif	//__tab_times__

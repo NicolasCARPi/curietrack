@@ -1,12 +1,12 @@
 /*******************************************************************************************************************
-									TabTimesDistanceIntensity Class
-									It is derived from the class TabTimes
-								This class find the neighbor with the best likeness.
-								Likeness depend on the distance and the intensity.
-								Institut Curie
-									UMR - 144
-									by Victor Racine
-									2004 06 24
+    TabTimesDistanceIntensity Class
+    It is derived from the class TabTimes
+    This class find the neighbor with the best likeness.
+    Likeness depend on the distance and the intensity.
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    2004 06 24
 *******************************************************************************************************************/
 #ifndef __tab_times_distance_intensity__
 		#define __tab_times_distance_intensity__
@@ -26,6 +26,5 @@
 		double getLikenessGlobal();
 		int runModel();
 	};
-
 
 #endif	//__tab_times_distance_intensity__

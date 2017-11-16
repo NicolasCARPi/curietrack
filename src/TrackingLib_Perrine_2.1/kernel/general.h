@@ -1,10 +1,10 @@
 /*******************************************************************************************************************
-								General Structures used for the tracking
-									Institut Curie
-									UMR - 144
-									by Victor Racine
-									12 july 2002
-									modified by Perrine 2011
+    General Structures used for the tracking
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    12 july 2002
+    modified by Perrine 2011
 *******************************************************************************************************************/
 
 #pragma once
@@ -14,8 +14,6 @@
 #include <math.h>
 #include <wchar.h>
 #include <stdlib.h>
-
-
 
 class PublicParameters{
 public:

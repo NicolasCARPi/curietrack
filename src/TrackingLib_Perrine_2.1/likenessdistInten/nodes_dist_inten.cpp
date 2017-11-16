@@ -1,15 +1,14 @@
 /*******************************************************************************************************************
-									NodeDistanceIntensity  Class
-									It is derived from the class Nodes
-								This class find the neighbor with the best likeness.
-								Likeness depend on the distance and the intensity.
-								Institut Curie
-									UMR - 144
-									by Victor Racine
-									2004 06 24
-									modified by Perrine August-September 2011 +Jannuary2012
+    NodeDistanceIntensity  Class
+    It is derived from the class Nodes
+    This class find the neighbor with the best likeness.
+    Likeness depend on the distance and the intensity.
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    2004 06 24
+    modified by Perrine August-September 2011 +Jannuary2012
 *******************************************************************************************************************/
-
 
 #include "nodes_dist_inten.h"
 #include "../generalParam/generalParam.h"
@@ -20,8 +19,6 @@ extern FILE *outputStream;
 #define _weightDistancediv_ 0.6  //0.6
 #define _weightIntensitydiv_ 0.2  //0.2
 #define _weightMeanIntensitydiv_ 0.2  //0.2
-//#define _weightDistance_ 0.8  //0.6
-//#define _weightIntensity_ 0.1  //0.2
 #define _weightMeanIntensity_ 0.1  //0.2
 #define _minEnergyFusion_ 0
 #define _minEnergyBlink_ 0
@@ -38,7 +35,6 @@ temperature is a temperature determined by the annealing schedule.
 ********************************************************************************************************************/
 bool NodeDistanceIntensity::metropolis(double deltaE, double temperature)
 {
-
     if(deltaE>=0.)
         return(true);
     double test=(double)(rand()+1)/(double)RAND_MAX;
@@ -46,14 +42,6 @@ bool NodeDistanceIntensity::metropolis(double deltaE, double temperature)
         return(false);
     else
         return(true);
-
-
-
-    /*if(deltaE>=-temperature)  //same convergence!!!
-    	return(true);
-    else
-    	return(false);*/
-
 }
 
 
@@ -84,17 +72,7 @@ double NodeDistanceIntensity::getLikeness(double difference, double sigma)
     }
 // likeliness should be between 0 (unlikely) and 1 (very likely)- The more difference there is, the less likelu it is.
 //function erf approximé par sqrt(1-exp(-4*X^2/pi)) (approximation Chu55) when x>0
-    //return 1-erf
     return( 1-(sqrt(1-exp((-4*((difference)/(3.*sigma))*(difference)/(3.*sigma))/PI))));
-
-    //return(-difference*difference/sigma/sigma);
-
-    //return(max(1.- fabs(difference)/(3.*sigma), 3.- fabs(difference)/sigma));
-
-    //return(1.- sqrt(difference/(3.*sigma)) );
-
-
-    //return(1.-log(fabs(difference)+1)/log(3.*sigma));
 }
 
 
@@ -140,7 +118,6 @@ double NodeDistanceIntensity::likenessDistanceFusion(Node* n1, Node* n2)
         return(0.);
     //Likeness =likeness in distance of n and (n&,n2) gravity center+ likeness of n1,n2 beeing near enough (less stddistance)
     return( getLikeness(distance(n1,n2),publicParameters->stdDistance)+ getLikeness( fabs(n1->distance(n2)-stericEffect(n1,n2)), publicParameters->stdDistance/2));
-    //return( getLikeness( fabs(distance(n1,n2)+n1->distance(n2)-stericEffect(n1,n2)), publicParameters->stdDistance));
 }
 
 
@@ -2818,4 +2795,3 @@ double NodeDistanceIntensity::makeChangeSimpleLinkage(double limitLoss)
         return(makeChangeSimpleLinkage0(limitLoss));
     }
 }
-

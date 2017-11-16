@@ -1,16 +1,14 @@
 /*******************************************************************************************************************
-									Nodes closer neighbors Class
-									It is derived from the class Nodes
-								This class find the closer neighbors for each structure.
-								Institut Curie
-									UMR - 144
-									by Victor Racine
-									2004 06 21
+    Nodes closer neighbors Class
+    It is derived from the class Nodes
+    This class find the closer neighbors for each structure.
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    2004 06 21
 *******************************************************************************************************************/
 
-
 #include "nodes_closer_neighbors.h"
-
 
 /********************************************************************************************************************
 Constructuor(int _time) of NodeCloserNeighbors class.
@@ -18,10 +16,6 @@ Constructuor(int _time) of NodeCloserNeighbors class.
 NodeCloserNeighbors::NodeCloserNeighbors(int _time):Node(_time){
 
 }
-
-
-
-
 
 void NodeCloserNeighbors::makeConnection(void){
 	ChainNeighbor*c;

@@ -1,15 +1,13 @@
 /*******************************************************************************************************************
-								This file define of the general parameters
-									Institut Curie
-									UMR - 144
-									by Victor Racine
-									28 october 2003
+    This file defines the general parameters
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    28 october 2003
 *******************************************************************************************************************/
 
 #ifndef __GENRAL_PARAM__
 #define __GENRAL_PARAM__
-
-
 
 #include "NoError.h"
 #ifndef PI

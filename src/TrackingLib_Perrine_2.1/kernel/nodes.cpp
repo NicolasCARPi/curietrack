@@ -1,10 +1,10 @@
 /*******************************************************************************************************************
-									Node Class
-								  Node representing one structure
-									Institut Curie
-									UMR - 144
-									by Victor Racine
-									12 july 2002
+    Node Class
+    Node representing one structure
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    12 july 2002
 *******************************************************************************************************************/
 
 /********************************************************************************************************************
@@ -183,4 +183,3 @@ int Node::sortByIntersityNeighbors(ChainNeighbor** neighborsHead){
 	return(RET_OK);
 
 }
-

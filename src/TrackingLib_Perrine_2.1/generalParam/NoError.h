@@ -1,9 +1,9 @@
 /*******************************************************************************************************************
-								This file define of the number error
-									Institut Curie
-									UMR - 144
-									by Victor Racine
-									28 october 2003
+    This file defines the number error
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    28 october 2003
 *******************************************************************************************************************/
 
 #ifndef __NO_ERROR__
@@ -11,7 +11,6 @@
 
 
 #define		RET_OK					0
-
 
 //MIA
 #define		SIZE_ERR				-1

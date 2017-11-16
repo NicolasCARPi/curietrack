@@ -135,20 +135,3 @@ void listFileAphaNumeric(string dirname, vector<string>& filelist)
 		printf("  %s\n", filelist[i].c_str());
 		}*/
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

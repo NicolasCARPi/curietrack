@@ -1,15 +1,12 @@
 /*******************************************************************************************************************
-									InfoNode InfoNode2D Classes
-								  InfoDataXX contains the information for a given Node in 2D or in 3D
-									Institut Curie
-									UMR - 144
-									by Victor Racine
-									2004/06/24
-									modified Perrine 2011
+    InfoNode InfoNode2D Classes
+    InfoDataXX contains the information for a given Node in 2D or in 3D
+    Institut Curie
+    UMR - 144
+    by Victor Racine
+    2004/06/24
+    modified Perrine 2011
 *******************************************************************************************************************/
-
-
-
 
 #ifndef __info_node__
 #define __info_node__
@@ -64,7 +61,5 @@ public:
 	void* getPtrInfoDataAscii();
 	void convertinfoAsciiinfo(int i1,int i2,float i3,float i4, float i5,float i6,float i7);
 };
-
-
 
 #endif //__info_node__

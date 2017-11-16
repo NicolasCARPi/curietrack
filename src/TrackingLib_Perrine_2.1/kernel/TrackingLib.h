@@ -7,7 +7,6 @@
 #include "../closerNeighbors/tab_times_closer_neighbors.h"
 #include "../likenessdistInten/tab_times_dist_inten.h"
 
-
 namespace TrackingFunc{
 
     class CRTracking
@@ -17,5 +16,4 @@ namespace TrackingFunc{
 		static int TrackingCellRace(int temperaturedecrease, double normalizedIntensityWeight, double maxDistance,double dydX, int disapearancetime, double costBirthDeath ,double** objectstotrack, int allobjectsinframes, int nbframesinmovie, std::vector<std::vector<double> > *output, int sizeimageX, int sizeimageY, double ratioCluster) ;
 
     };
-
 }
